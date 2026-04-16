@@ -9,12 +9,12 @@ export default function Contact() {
   };
 
   return (
-    <section id="contacto" className="py-12 bg-bg-main pb-24">
+    <section id="contacto" className="py-12 bg-white pb-24">
       <div className="container mx-auto px-4 lg:px-10">
-        <div className="section-card">
+        <div className="section-card bg-slate-50/30 backdrop-blur-sm border-slate-200">
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
-              <span className="text-med-light font-bold tracking-widest uppercase text-[10px] mb-2 block">Información de Contacto</span>
+              <span className="text-med-red font-bold tracking-widest uppercase text-[10px] mb-2 block">Información de Contacto</span>
               <h2 className="text-3xl font-black text-med-dark mb-8 leading-tight">
                 Turnos y Consultas
               </h2>

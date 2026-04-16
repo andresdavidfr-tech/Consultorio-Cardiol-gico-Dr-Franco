@@ -3,11 +3,12 @@ import { ChevronRight, ShieldCheck, Clock, Award } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section id="inicio" className="relative pt-[110px] pb-12 overflow-hidden">
+    <section id="inicio" className="relative pt-[110px] pb-12 overflow-hidden bg-white">
       <div className="container mx-auto px-4 lg:px-10 relative z-10">
         <div className="grid lg:grid-cols-[1fr_400px] gap-8 items-stretch">
-          <div className="section-card flex flex-col justify-center">
-            <span className="inline-block px-3 py-1 bg-sky-100 text-med-dark rounded text-[11px] font-bold uppercase tracking-wider mb-4 w-fit">
+          <div className="section-card flex flex-col justify-center border-med-dark/10 shadow-xl shadow-med-dark/5">
+            <span className="inline-block px-3 py-1 bg-med-dark/5 text-med-dark rounded text-[11px] font-bold uppercase tracking-wider mb-4 w-fit border border-med-dark/10 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 bg-med-red rounded-full animate-pulse shadow-[0_0_5px_rgba(239,68,68,0.5)]" />
               Especialista UBA - SAC
             </span>
             

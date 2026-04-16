@@ -49,10 +49,10 @@ export default function Services() {
   ];
 
   return (
-    <section id="servicios" className="py-12 bg-bg-main">
+    <section id="servicios" className="py-12 bg-slate-50 border-y border-border-subtle">
       <div className="container mx-auto px-4 lg:px-10">
-        <div className="mb-10">
-          <span className="text-med-light font-bold tracking-widest uppercase text-[10px] mb-2 block">Nuestros Servicios</span>
+        <div className="mb-10 text-center md:text-left">
+          <span className="text-med-red font-bold tracking-widest uppercase text-[10px] mb-2 block">Cuidado Cardiovascular Integral</span>
           <h2 className="text-3xl font-black text-med-dark">Especialidades Médicas</h2>
         </div>
 
