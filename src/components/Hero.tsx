@@ -45,7 +45,7 @@ export default function Hero() {
               <div className="w-px h-6 bg-border-subtle" />
               <div className="flex flex-col">
                 <span className="text-xl font-black text-med-dark uppercase">SAC</span>
-                <span className="text-[10px] text-text-light font-bold uppercase tracking-wider">Sociedad Arg.</span>
+                <span className="text-[10px] text-text-light font-bold uppercase tracking-wider">Sociedad Argentina de Cardiología</span>
               </div>
             </div>
           </div>

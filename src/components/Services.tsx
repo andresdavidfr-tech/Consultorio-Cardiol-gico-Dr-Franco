@@ -5,7 +5,8 @@ import {
   Stethoscope, 
   ClipboardCheck, 
   UserRoundCheck, 
-  Baby 
+  Baby,
+  Clock
 } from "lucide-react";
 
 export default function Services() {
@@ -39,6 +40,11 @@ export default function Services() {
       icon: <HeartPulse size={20} />,
       title: "Cardiopatías",
       description: "Seguimiento especializado."
+    },
+    {
+      icon: <Clock size={20} />,
+      title: "Holter 24hs",
+      description: "Monitoreo continuo del ritmo cardíaco."
     }
   ];
 
