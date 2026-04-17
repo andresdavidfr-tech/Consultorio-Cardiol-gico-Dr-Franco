@@ -62,13 +62,16 @@ export default function Services() {
               key={idx}
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ 
+                scale: 1.05,
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+              }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ 
-                duration: 0.5, 
-                delay: idx % 3 * 0.1,
+                duration: 0.3, 
                 ease: "easeOut" 
               }}
-              className="compact-item"
+              className="compact-item cursor-pointer"
             >
               <div className="bg-sky-50 w-10 h-10 rounded-lg flex items-center justify-center text-med-light shrink-0">
                 {service.icon}

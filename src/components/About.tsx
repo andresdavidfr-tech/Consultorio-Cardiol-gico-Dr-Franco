@@ -55,15 +55,18 @@ export default function About() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="rounded-2xl overflow-hidden shadow-sm border border-border-subtle aspect-video lg:aspect-square relative"
+                className="rounded-2xl overflow-hidden shadow-xl border border-border-subtle aspect-video lg:aspect-square relative group"
               >
                 <img
-                  src="https://picsum.photos/seed/sunny-mountains-happiness/800/800"
-                  alt="Paisaje sereno y feliz"
-                  className="w-full h-full object-cover"
+                  src="https://picsum.photos/seed/happy-family-new-home/1000/1000"
+                  alt="Familia alegre frente a su hogar"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-med-dark/20 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-med-dark/40 via-transparent to-transparent opacity-60 pointer-events-none" />
+                <div className="absolute bottom-6 left-6 right-6 text-white text-shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <p className="text-sm font-bold italic">“La salud de su familia es nuestra prioridad.”</p>
+                </div>
               </motion.div>
             </div>
           </div>

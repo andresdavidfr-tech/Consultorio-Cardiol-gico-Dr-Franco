@@ -30,6 +30,8 @@ export default function Header() {
     { name: "Inicio", href: "#inicio" },
     { name: "El Doctor", href: "#doctor" },
     { name: "Servicios", href: "#servicios" },
+    { name: "Testimonios", href: "#testimonios" },
+    { name: "FAQ", href: "#faq" },
     { name: "Ubicación", href: "#ubicacion" },
     { name: "Contacto", href: "#contacto" },
   ];

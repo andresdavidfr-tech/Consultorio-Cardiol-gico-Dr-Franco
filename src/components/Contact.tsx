@@ -1,18 +1,13 @@
-import { FormEvent } from "react";
 import { motion } from "motion/react";
-import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin, MessageCircle, FileText, ClipboardList, ShieldAlert } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Contact() {
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    alert("Mensaje enviado con éxito. Nos contactaremos a la brevedad.");
-  };
-
   return (
     <section id="contacto" className="py-12 bg-white pb-24">
       <div className="container mx-auto px-4 lg:px-10">
         <div className="section-card bg-slate-50/30 backdrop-blur-sm border-slate-200">
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-[1fr_450px] gap-12">
             <div>
               <span className="text-med-red font-bold tracking-widest uppercase text-[10px] mb-2 block">Información de Contacto</span>
               <h2 className="text-3xl font-black text-med-dark mb-8 leading-tight">
@@ -20,12 +15,26 @@ export default function Contact() {
               </h2>
 
               <div className="space-y-6">
-                <div className="flex gap-4 items-center">
-                  <div className="bg-slate-50 p-2.5 rounded-lg text-med-dark border border-border-subtle">
+                <div className="flex gap-4 items-center group cursor-pointer">
+                  <motion.div 
+                    animate={{ 
+                      scale: [1, 1.1, 1],
+                    }}
+                    transition={{ 
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                    whileHover={{ 
+                      color: "var(--color-med-light)",
+                      scale: 1.2
+                    }}
+                    className="bg-slate-50 p-2.5 rounded-lg text-med-dark border border-border-subtle transition-colors"
+                  >
                     <MapPin size={18} />
-                  </div>
+                  </motion.div>
                   <div>
-                    <h5 className="font-extrabold text-xs text-med-dark uppercase">Dirección</h5>
+                    <h5 className="font-extrabold text-xs text-med-dark uppercase group-hover:text-med-light transition-colors">Dirección</h5>
                     <p className="text-sm text-text-light">Delia 1367, San Miguel, Buenos Aires</p>
                   </div>
                 </div>
@@ -53,7 +62,8 @@ export default function Contact() {
                 <a 
                   href="https://wa.me/5491130840282" 
                   target="_blank" 
-                  className="bg-emerald-500 text-white w-full py-4 rounded-xl font-extrabold flex items-center justify-center gap-2 hover:bg-emerald-600 transition-colors shadow-sm mt-4"
+                  rel="noopener noreferrer"
+                  className="bg-emerald-500 text-white w-full py-4 rounded-xl font-extrabold flex items-center justify-center gap-2 hover:bg-emerald-600 transition-colors shadow-lg active:scale-95 transition-transform"
                 >
                   <MessageCircle size={20} />
                   Solicitar Turno WhatsApp
@@ -61,52 +71,40 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="bg-slate-50 rounded-2xl p-6 border border-border-subtle">
-               <h4 className="text-xs font-bold text-text-light uppercase tracking-widest mb-6 text-center">Formulario Administrativo</h4>
-               <form onSubmit={handleSubmit} className="space-y-4">
-                  <input
-                    type="text"
-                    required
-                    className="w-full bg-white border border-border-subtle rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-med-dark transition-all"
-                    placeholder="Nombre Completo"
-                  />
-                  <div className="grid grid-cols-2 gap-4">
-                    <input
-                      type="tel"
-                      required
-                      className="w-full bg-white border border-border-subtle rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-med-dark transition-all"
-                      placeholder="Teléfono"
-                    />
-                    <input
-                      type="email"
-                      required
-                      className="w-full bg-white border border-border-subtle rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-med-dark transition-all"
-                      placeholder="Email"
-                    />
-                  </div>
-                  <textarea
-                    rows={3}
-                    required
-                    className="w-full bg-white border border-border-subtle rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-med-dark transition-all resize-none"
-                    placeholder="Escriba su consulta aquí..."
-                  ></textarea>
-                  <button
-                    type="submit"
-                    className="w-full bg-med-dark hover:bg-med-light text-white font-bold py-3.5 rounded-lg shadow-sm flex items-center justify-center gap-2 transition-all"
-                  >
-                    <span>Enviar Mensaje</span>
-                    <Send size={16} />
-                  </button>
-               </form>
+            <div className="relative">
+              <div className="absolute inset-0 bg-med-dark rounded-3xl -rotate-1 opacity-[0.03]" />
+              <div className="relative h-full bg-white rounded-3xl p-8 border border-border-subtle shadow-xl flex flex-col justify-center text-center">
+                 <div className="bg-med-dark/5 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 text-med-dark">
+                    <ClipboardList size={32} />
+                 </div>
+                 <h3 className="text-xl font-black text-med-dark mb-3">Consulta Médica Digital</h3>
+                 <p className="text-text-light text-sm mb-8 leading-relaxed">
+                   Si prefiere enviarnos sus datos médicos y síntomas para una evaluación previa, puede completar nuestro formulario especializado.
+                 </p>
+                 
+                 <Link
+                   to="/consulta-especial"
+                   className="group bg-med-dark hover:bg-med-light text-white font-black py-4 px-6 rounded-2xl shadow-xl shadow-med-dark/20 flex items-center justify-center gap-3 transition-all active:scale-95 text-base"
+                 >
+                   <span>Ir al Formulario Detallado</span>
+                   <FileText size={20} className="group-hover:rotate-12 transition-transform" />
+                 </Link>
+                 
+                 <div className="mt-8 flex items-center justify-center gap-2 opacity-50">
+                    <ShieldAlert size={14} className="text-med-accent" />
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-text-dark">Datos Seguros y Confidenciales</span>
+                 </div>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Map Placeholder as seen in design */}
-        <div id="ubicacion" className="mt-8 rounded-2xl overflow-hidden border border-border-subtle h-[300px] shadow-sm relative">
-           <iframe
+        {/* Map Section with Navigation Options */}
+        <div id="ubicacion" className="mt-8 rounded-3xl overflow-hidden border border-border-subtle shadow-lg relative bg-slate-50">
+          <div className="h-[400px] w-full">
+            <iframe
               title="Mapa Consultorio Dr. Esteban Franco"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.136712345678!2d-58.718!3d-34.542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcbd3939393939%3A0x0!2zRGVsaWEgMTM2NywgQjE2NjNCWUQgU2FuIE1pZ3VlbCwgUHJvdmluY2lhIGRlIEJ1ZW5vcyBBaXJlcw!5e0!3m2!1ses!2sar!4v1234567890123"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.8756041699933!2d-58.718047924261774!3d-34.544026872976804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcbd6c81881ff1%3A0xc3b5edee080c98f5!2sDelia%201367%2C%20B1663BYD%20San%20Miguel%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1713312890123!5m2!1ses!2sar"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -114,9 +112,42 @@ export default function Contact() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
-            <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm p-3 rounded-lg border border-border-subtle text-[11px] font-bold text-med-dark shadow-sm">
-                Delia 1367, San Miguel, Buenos Aires
+          </div>
+          
+          <div className="absolute top-4 left-4 right-4 md:right-auto flex flex-col gap-2">
+            <div className="bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-border-subtle shadow-xl max-w-sm">
+              <div className="flex items-start gap-3">
+                <div className="bg-med-dark/10 p-2 rounded-lg text-med-dark">
+                  <MapPin size={20} />
+                </div>
+                <div>
+                  <h4 className="font-bold text-med-dark text-sm">¿Cómo llegar?</h4>
+                  <p className="text-[11px] text-text-light mb-3">Delia 1367, San Miguel. Ubicado en el centro comercial.</p>
+                  
+                  <div className="flex flex-wrap gap-2">
+                    <a 
+                      href="https://www.google.com/maps/dir/?api=1&destination=-34.5440269,-58.7180479"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-med-dark text-white text-[10px] font-bold px-3 py-2 rounded-lg flex items-center gap-1.5 hover:bg-med-light transition-colors"
+                    >
+                      <img src="https://www.google.com/s2/favicons?domain=maps.google.com&sz=32" alt="" className="w-3 h-3" />
+                      Google Maps
+                    </a>
+                    <a 
+                      href="https://waze.com/ul?ll=-34.5440269,-58.7180479&navigate=yes"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-sky-400 text-white text-[10px] font-bold px-3 py-2 rounded-lg flex items-center gap-1.5 hover:bg-sky-500 transition-colors"
+                    >
+                      <img src="https://www.google.com/s2/favicons?domain=waze.com&sz=32" alt="" className="w-3 h-3" />
+                      Waze
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
       </div>
     </section>
