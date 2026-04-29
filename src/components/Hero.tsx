@@ -21,11 +21,11 @@ export default function Hero() {
             <div className="lg:hidden flex flex-col items-center mb-6 pt-4 border-t border-border-subtle">
                <div className="w-24 h-24 rounded-full border-2 border-med-light overflow-hidden mb-2 shadow-inner bg-slate-100">
                   <OptimizedImage
-                    src="/doctor.png"
-                    alt="Dr. Esteban Franco"
-                    className="w-full h-full"
-                    fallbackSrc="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=400&h=400"
-                  />
+                  src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=800"
+                  alt="Dr. Esteban Franco"
+                  className="w-full h-full"
+                  fallbackSrc="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=400&h=400"
+                />
                </div>
                <span className="text-xs font-black text-med-dark">Dr. Esteban Franco</span>
                <span className="text-[10px] font-bold text-med-light uppercase tracking-widest">Cardiólogo UBA - SAC</span>
@@ -69,7 +69,7 @@ export default function Hero() {
             <div className="section-card flex-1 flex flex-col items-center justify-center text-center">
               <div className="w-32 h-32 rounded-full border-4 border-med-light overflow-hidden mb-4 shadow-inner bg-slate-100">
                 <OptimizedImage
-                  src="/doctor.png"
+                  src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=800"
                   alt="Dr. Esteban Franco"
                   className="w-full h-full"
                   fallbackSrc="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=600&h=600"
