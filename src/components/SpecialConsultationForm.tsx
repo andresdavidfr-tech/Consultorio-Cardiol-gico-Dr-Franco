@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 export default function SpecialConsultationForm() {
   const navigate = useNavigate();
   const [submitted, setSubmitted] = useState(false);
+  const [errors, setErrors] = useState<{ age?: string; phone?: string }>({});
   const [formData, setFormData] = useState({
     fullName: "",
     age: "",
@@ -14,8 +15,37 @@ export default function SpecialConsultationForm() {
     symptoms: ""
   });
 
+  const validateForm = () => {
+    const newErrors: { age?: string; phone?: string } = {};
+    
+    // Age validation: must be a positive number
+    const ageNum = parseInt(formData.age);
+    if (!formData.age || isNaN(ageNum) || ageNum <= 0) {
+      newErrors.age = "Por favor, ingrese una edad válida mayor a 0.";
+    } else if (ageNum > 120) {
+      newErrors.age = "Por favor, ingrese una edad realista.";
+    }
+
+    // Phone validation: basic format check (if provided or required)
+    // Even if optional, if they type something, we validate it
+    if (formData.phone) {
+      const phoneRegex = /^\+?[0-9\s\-()]{7,20}$/;
+      if (!phoneRegex.test(formData.phone)) {
+        newErrors.phone = "El formato del teléfono no es válido.";
+      }
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+
     // Simulate sending data
     console.log("Consulta enviada:", formData);
     setSubmitted(true);
@@ -118,10 +148,22 @@ export default function SpecialConsultationForm() {
                   type="number"
                   required
                   value={formData.age}
-                  onChange={(e) => setFormData({...formData, age: e.target.value})}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-med-dark focus:bg-white transition-all shadow-inner"
+                  onChange={(e) => {
+                    setFormData({...formData, age: e.target.value});
+                    if (errors.age) setErrors(prev => ({ ...prev, age: undefined }));
+                  }}
+                  className={`w-full bg-slate-50 border ${errors.age ? 'border-red-500' : 'border-slate-200'} rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-med-dark focus:bg-white transition-all shadow-inner`}
                   placeholder="Su edad"
                 />
+                {errors.age && (
+                  <motion.p 
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-red-500 text-[10px] font-bold mt-1"
+                  >
+                    {errors.age}
+                  </motion.p>
+                )}
               </div>
             </div>
 
@@ -142,19 +184,30 @@ export default function SpecialConsultationForm() {
                 />
               </div>
 
-              {/* Phone */}
               <div className="space-y-2">
                 <label className="text-[10px] font-black uppercase text-text-light tracking-widest flex items-center gap-2">
                   <Phone size={12} className="text-med-dark" />
-                  Teléfono (Bpcional)
+                  Teléfono (Opcional)
                 </label>
                 <input
                   type="tel"
                   value={formData.phone}
-                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-med-dark focus:bg-white transition-all shadow-inner"
+                  onChange={(e) => {
+                    setFormData({...formData, phone: e.target.value});
+                    if (errors.phone) setErrors(prev => ({ ...prev, phone: undefined }));
+                  }}
+                  className={`w-full bg-slate-50 border ${errors.phone ? 'border-red-500' : 'border-slate-200'} rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-med-dark focus:bg-white transition-all shadow-inner`}
                   placeholder="Su número de contacto"
                 />
+                {errors.phone && (
+                  <motion.p 
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-red-500 text-[10px] font-bold mt-1"
+                  >
+                    {errors.phone}
+                  </motion.p>
+                )}
               </div>
             </div>
 
