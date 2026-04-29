@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Activity, Menu, X, Phone } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,14 +29,40 @@ export default function Header() {
   }, [isOpen]);
 
   const navLinks = [
-    { name: "Inicio", href: "#inicio" },
-    { name: "El Doctor", href: "#doctor" },
-    { name: "Servicios", href: "#servicios" },
-    { name: "Testimonios", href: "#testimonios" },
-    { name: "FAQ", href: "#faq" },
-    { name: "Ubicación", href: "#ubicacion" },
-    { name: "Contacto", href: "#contacto" },
+    { name: "Inicio", href: "/#inicio" },
+    { name: "El Doctor", href: "/#doctor" },
+    { name: "Servicios", href: "/#servicios" },
+    { name: "Testimonios", href: "/#testimonios" },
+    { name: "FAQ", href: "/#faq" },
+    { name: "Ubicación", href: "/#ubicacion" },
+    { name: "Contacto", href: "/#contacto" },
   ];
+
+  const NavLink = ({ link, className }: { link: typeof navLinks[0], className?: string }) => {
+    const isSamePage = location.pathname === "/" && link.href.startsWith("/#");
+
+    if (isSamePage) {
+      return (
+        <a 
+          href={link.href.replace("/", "")} 
+          className={className}
+          onClick={() => setIsOpen(false)}
+        >
+          {link.name}
+        </a>
+      );
+    }
+
+    return (
+      <Link 
+        to={link.href} 
+        className={className}
+        onClick={() => setIsOpen(false)}
+      >
+        {link.name}
+      </Link>
+    );
+  };
 
   return (
     <>
@@ -45,7 +73,7 @@ export default function Header() {
         }`}
       >
         <div className="container mx-auto px-4 lg:px-10 flex justify-between items-center w-full">
-          <a href="#inicio" className="flex items-center gap-3 group">
+          <NavLink link={navLinks[0]} className="flex items-center gap-3 group">
             <div className="relative">
               {/* Logo Background Effect */}
               <div className="absolute inset-0 bg-med-dark rounded-xl -rotate-6 group-hover:rotate-6 transition-transform duration-500 opacity-5" />
@@ -71,18 +99,16 @@ export default function Header() {
                 <span className="text-med-light">Dr. Franco</span>
               </span>
             </div>
-          </a>
+          </NavLink>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
-              <a
+              <NavLink
                 key={link.name}
-                href={link.href}
+                link={link}
                 className="text-sm font-semibold transition-colors text-text-light hover:text-med-dark"
-              >
-                {link.name}
-              </a>
+              />
             ))}
             <a
               href="tel:1130840282"
@@ -127,18 +153,17 @@ export default function Header() {
             >
               <div className="flex flex-col p-8 gap-1">
                 {navLinks.map((link, idx) => (
-                  <motion.a
+                  <motion.div
                     key={link.name}
-                    href={link.href}
                     initial={{ x: -10, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.05 * idx }}
-                    className="text-xl font-bold text-med-dark py-4 px-2 hover:bg-slate-50 rounded-xl transition-colors flex items-center justify-between group"
-                    onClick={() => setIsOpen(false)}
                   >
-                    <span>{link.name}</span>
-                    <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
-                  </motion.a>
+                    <NavLink
+                      link={link}
+                      className="text-xl font-bold text-med-dark py-4 px-2 hover:bg-slate-50 rounded-xl transition-colors flex items-center justify-between group w-full"
+                    />
+                  </motion.div>
                 ))}
                 
                 <motion.div 

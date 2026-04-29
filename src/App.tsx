@@ -14,6 +14,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
 import SpecialConsultationForm from "./components/SpecialConsultationForm";
+import ScrollToTop from "./components/ScrollToTop";
 
 function HomePage() {
   return (
@@ -39,7 +40,8 @@ function HomePage() {
 
 export default function App() {
   return (
-    <div className="min-h-screen font-sans selection:bg-med-light/30 selection:text-med-dark selection:bg-med-light/10">
+    <div className="min-h-screen font-sans selection:bg-med-light/20 selection:text-med-dark">
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/consulta-especial" element={<SpecialConsultationForm />} />
