@@ -55,7 +55,7 @@ export default function Hero() {
             <div className="section-card flex-1 flex flex-col items-center justify-center text-center">
               <div className="w-32 h-32 rounded-full border-4 border-med-light overflow-hidden mb-4 shadow-inner bg-slate-100">
                 <img
-                  src="https://picsum.photos/seed/doctor-card-EF/400/400"
+                  src="/regenerated_image_1777499698336.png"
                   alt="Dr. Esteban Franco"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"

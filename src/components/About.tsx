@@ -58,7 +58,7 @@ export default function About() {
                 className="rounded-2xl overflow-hidden shadow-xl border border-border-subtle aspect-video lg:aspect-square relative group"
               >
                 <img
-                  src="https://picsum.photos/seed/happy-family-new-home/1000/1000"
+                  src="/regenerated_image_1777496974835.png"
                   alt="Familia alegre frente a su hogar"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   referrerPolicy="no-referrer"
