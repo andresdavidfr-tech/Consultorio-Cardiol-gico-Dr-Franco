@@ -17,6 +17,18 @@ export default function Hero() {
               con experiencia y dedicación
             </h1>
             
+            <div className="lg:hidden flex flex-col items-center mb-6 pt-4 border-t border-border-subtle">
+               <div className="w-24 h-24 rounded-full border-2 border-med-light overflow-hidden mb-2 shadow-inner bg-slate-100">
+                  <img
+                    src="/regenerated_image_1777501178251.png"
+                    alt="Dr. Esteban Franco"
+                    className="w-full h-full object-cover"
+                  />
+               </div>
+               <span className="text-xs font-black text-med-dark">Dr. Esteban Franco</span>
+               <span className="text-[10px] font-bold text-med-light uppercase tracking-widest">Cardiólogo UBA - SAC</span>
+            </div>
+
             <p className="text-base text-text-light mb-8 max-w-2xl leading-relaxed">
               Atención cardiológica integral en San Miguel. Compromiso con la salud cardiovascular de nuestros pacientes a través de la prevención y tecnología médica.
             </p>
@@ -55,14 +67,9 @@ export default function Hero() {
             <div className="section-card flex-1 flex flex-col items-center justify-center text-center">
               <div className="w-32 h-32 rounded-full border-4 border-med-light overflow-hidden mb-4 shadow-inner bg-slate-100">
                 <img
-                  src="/doctor.png"
+                  src="/regenerated_image_1777501178251.png"
                   alt="Dr. Esteban Franco"
                   className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=400";
-                  }}
                 />
               </div>
               <h2 className="text-2xl font-black text-med-dark mb-1">Dr. Esteban Franco</h2>
