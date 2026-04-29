@@ -57,7 +57,7 @@ export default function Services() {
       <div className="container mx-auto px-4 lg:px-10 relative z-10">
         <div className="mb-12 text-center md:text-left">
           <span className="text-med-red font-bold tracking-widest uppercase text-[10px] mb-2 block">Cuidado Cardiovascular Integral</span>
-          <h2 className="text-4xl font-display font-bold text-white tracking-tight">Especialidades Médicas</h2>
+          <h2 className="text-4xl font-black text-white tracking-tight">Especialidades Médicas</h2>
           <div className="h-1.5 w-20 bg-med-light mt-4 rounded-full mx-auto md:mx-0 opacity-40" />
         </div>
 
@@ -82,7 +82,7 @@ export default function Services() {
                 {service.icon}
               </div>
               <div>
-                <h3 className="text-base font-display font-bold text-white mb-1 leading-tight">{service.title}</h3>
+                <h3 className="text-base font-extrabold text-white mb-1 leading-tight">{service.title}</h3>
                 <p className="text-slate-400 text-xs leading-relaxed font-medium">
                   {service.description}
                 </p>

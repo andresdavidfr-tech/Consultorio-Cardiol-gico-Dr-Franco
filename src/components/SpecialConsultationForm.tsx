@@ -67,7 +67,7 @@ export default function SpecialConsultationForm() {
           <div className="bg-emerald-100 text-emerald-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
             <CheckCircle2 size={40} />
           </div>
-          <h2 className="text-2xl font-display font-bold text-med-dark mb-4">¡Consulta Recibida!</h2>
+          <h2 className="text-2xl font-black text-med-dark mb-4">¡Consulta Recibida!</h2>
           <p className="text-text-light mb-8 leading-relaxed">
             Gracias por confiar en nosotros, <span className="font-bold text-med-dark">{formData.fullName}</span>. 
             El Dr. Franco revisará su información y nos contactaremos a la brevedad.
@@ -108,9 +108,9 @@ export default function SpecialConsultationForm() {
                 <div className="bg-white/20 p-2 rounded-lg backdrop-blur-md">
                   <Activity size={24} className="text-white" />
                 </div>
-                <span className="text-[10px] font-display font-bold uppercase tracking-[0.2em] opacity-80">Formulario Médico</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.2em] opacity-80">Formulario Médico</span>
               </div>
-              <h1 className="text-3xl font-display font-bold leading-tight">Consulta Cardiológica Detallada</h1>
+              <h1 className="text-3xl font-black leading-tight">Consulta Cardiológica Detallada</h1>
               <p className="text-white/70 text-sm mt-2 font-medium">Complete los siguientes datos para una mejor evaluación.</p>
             </div>
             {/* Background Decorative Element */}

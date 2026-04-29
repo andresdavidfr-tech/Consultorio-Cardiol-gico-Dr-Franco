@@ -73,9 +73,9 @@ export default function FAQ() {
         <div className="max-w-3xl mx-auto">
           <div className="flex items-center gap-2 mb-2 justify-center md:justify-start">
             <HelpCircle size={16} className="text-med-red" />
-            <span className="text-med-red font-bold tracking-widest uppercase text-[10px] block font-sans">Preguntas Frecuentes</span>
+            <span className="text-med-red font-bold tracking-widest uppercase text-[10px] block">Preguntas Frecuentes</span>
           </div>
-          <h2 className="text-3xl font-display font-bold text-med-dark mb-8 text-center md:text-left">Dudas comunes</h2>
+          <h2 className="text-3xl font-black text-med-dark mb-8 text-center md:text-left">Dudas comunes</h2>
           
           <div className="bg-white rounded-3xl p-2 md:p-6 border border-border-subtle shadow-sm px-6">
             {faqs.map((faq, index) => (

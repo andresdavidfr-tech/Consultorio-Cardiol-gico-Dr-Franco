@@ -39,14 +39,14 @@ export default function Testimonials() {
       <div className="container mx-auto px-4 lg:px-10">
         <div className="text-center mb-10">
           <span className="text-med-red font-bold tracking-widest uppercase text-[10px] mb-2 block">Experiencias</span>
-          <h2 className="text-3xl font-display font-bold text-med-dark">Lo que dicen nuestros pacientes</h2>
+          <h2 className="text-3xl font-black text-med-dark">Lo que dicen nuestros pacientes</h2>
         </div>
 
         <div className="relative max-w-4xl mx-auto">
           <div className="flex items-center justify-between gap-4">
             <button 
               onClick={prev}
-              className="hidden md:flex p-3 rounded-full border border-border-subtle hover:bg-slate-50 transition-colors text-med-dark shrink-0 transition-transform active:scale-95"
+              className="hidden md:flex p-3 rounded-full border border-border-subtle hover:bg-slate-50 transition-colors text-med-dark shrink-0"
               aria-label="Anterior"
             >
               <ChevronLeft size={24} />
@@ -71,12 +71,12 @@ export default function Testimonials() {
                       <Star key={i} size={16} className="text-amber-400 fill-amber-400" />
                     ))}
                   </div>
-                  <p className="text-lg md:text-xl text-med-dark font-serif italic mb-6 leading-relaxed">
+                  <p className="text-lg md:text-xl text-med-dark font-medium italic mb-6 leading-relaxed">
                     "{testimonials[currentIndex].text}"
                   </p>
                   <div>
-                    <h4 className="font-display font-bold text-med-dark uppercase tracking-tight">{testimonials[currentIndex].name}</h4>
-                    <p className="text-[10px] text-text-light font-bold uppercase tracking-widest">{testimonials[currentIndex].role}</p>
+                    <h4 className="font-bold text-med-dark uppercase tracking-tight">{testimonials[currentIndex].name}</h4>
+                    <p className="text-xs text-text-light font-bold uppercase tracking-widest">{testimonials[currentIndex].role}</p>
                   </div>
                 </motion.div>
               </AnimatePresence>
@@ -84,7 +84,7 @@ export default function Testimonials() {
 
             <button 
               onClick={next}
-              className="hidden md:flex p-3 rounded-full border border-border-subtle hover:bg-slate-50 transition-colors text-med-dark shrink-0 transition-transform active:scale-95"
+              className="hidden md:flex p-3 rounded-full border border-border-subtle hover:bg-slate-50 transition-colors text-med-dark shrink-0"
               aria-label="Siguiente"
             >
               <ChevronRight size={24} />

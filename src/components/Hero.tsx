@@ -12,7 +12,7 @@ export default function Hero() {
               Especialista UBA - SAC
             </span>
             
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-med-dark leading-tight mb-4 tracking-tight">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-med-dark leading-tight mb-4 tracking-tight">
               Cuidando tu corazón <br /> 
               con experiencia y dedicación
             </h1>
@@ -23,9 +23,10 @@ export default function Hero() {
                     src="/doctor.png"
                     alt="Dr. Esteban Franco"
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                </div>
-               <span className="text-xs font-display font-bold text-med-dark">Dr. Esteban Franco</span>
+               <span className="text-xs font-black text-med-dark">Dr. Esteban Franco</span>
                <span className="text-[10px] font-bold text-med-light uppercase tracking-widest">Cardiólogo UBA - SAC</span>
             </div>
 
@@ -38,13 +39,13 @@ export default function Hero() {
                 href="https://wa.me/5491130840282"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-lg font-bold text-base transition-all flex items-center gap-2 shadow-sm active:scale-95 transition-transform"
+                className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-lg font-bold text-base transition-all flex items-center gap-2 shadow-sm"
               >
                 Solicitar Turno WhatsApp
               </a>
               <a
                 href="#servicios"
-                className="bg-white hover:bg-slate-50 text-text-dark border border-border-subtle px-6 py-3 rounded-lg font-bold text-base transition-all shadow-sm active:scale-95 transition-transform"
+                className="bg-white hover:bg-slate-50 text-text-dark border border-border-subtle px-6 py-3 rounded-lg font-bold text-base transition-all shadow-sm"
               >
                 Ver Servicios
               </a>
@@ -52,12 +53,12 @@ export default function Hero() {
 
             <div className="mt-8 pt-6 border-t border-border-subtle flex items-center gap-6">
               <div className="flex flex-col">
-                <span className="text-xl font-display font-bold text-med-dark">15+</span>
+                <span className="text-xl font-black text-med-dark">15+</span>
                 <span className="text-[10px] text-text-light font-bold uppercase tracking-wider">Años Exp.</span>
               </div>
               <div className="w-px h-6 bg-border-subtle" />
               <div className="flex flex-col">
-                <span className="text-xl font-display font-bold text-med-dark uppercase leading-none">SAC</span>
+                <span className="text-xl font-black text-med-dark uppercase">SAC</span>
                 <span className="text-[10px] text-text-light font-bold uppercase tracking-wider">Sociedad Argentina de Cardiología</span>
               </div>
             </div>
@@ -70,12 +71,13 @@ export default function Hero() {
                   src="/doctor.png"
                   alt="Dr. Esteban Franco"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
-              <h2 className="text-2xl font-display font-bold text-med-dark mb-1">Dr. Esteban Franco</h2>
+              <h2 className="text-2xl font-black text-med-dark mb-1">Dr. Esteban Franco</h2>
               <h3 className="text-xs font-bold text-med-light uppercase tracking-widest mb-4">Médico UBA - SAC</h3>
-              <p className="text-sm font-serif text-text-light leading-relaxed italic border-t border-border-subtle pt-4 mt-2">
-                “Cuidando tu corazón <br/> con experiencia y dedicación”
+              <p className="text-xs text-text-light leading-relaxed italic border-t border-border-subtle pt-4 mt-2">
+                “Cuidando tu corazón con experiencia y dedicación”
               </p>
             </div>
           </div>
