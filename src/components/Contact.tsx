@@ -114,39 +114,58 @@ export default function Contact() {
             ></iframe>
           </div>
           
-          <div className="absolute top-4 left-4 right-4 md:right-auto flex flex-col gap-2">
-            <div className="bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-border-subtle shadow-xl max-w-sm">
-              <div className="flex items-start gap-3">
-                <div className="bg-med-dark/10 p-2 rounded-lg text-med-dark">
-                  <MapPin size={20} />
+          <div className="absolute top-6 left-6 right-6 md:right-auto flex flex-col gap-3 group">
+            <motion.div 
+              initial={{ x: -20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              className="bg-white/95 backdrop-blur-md p-5 rounded-3xl border border-border-subtle shadow-2xl max-w-sm"
+            >
+              <div className="flex items-start gap-4">
+                <div className="relative">
+                  <div className="bg-med-dark text-white p-3 rounded-2xl shadow-lg shadow-med-dark/20 relative z-10">
+                    <MapPin size={24} />
+                  </div>
+                  <motion.div 
+                    animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                    className="absolute inset-0 bg-med-dark rounded-2xl -z-0"
+                  />
                 </div>
-                <div>
-                  <h4 className="font-bold text-med-dark text-sm">¿Cómo llegar?</h4>
-                  <p className="text-[11px] text-text-light mb-3">Delia 1367, San Miguel. Ubicado en el centro comercial.</p>
+                
+                <div className="flex-1">
+                  <h4 className="font-black text-med-dark text-lg leading-tight mb-1">Consultorio San Miguel</h4>
+                  <p className="text-xs text-text-light mb-4 font-medium leading-relaxed">
+                    Delia 1367, San Miguel.<br/>
+                    Centro Médico Profesional.
+                  </p>
                   
-                  <div className="flex flex-wrap gap-2">
-                    <a 
-                      href="https://www.google.com/maps/dir/?api=1&destination=-34.5440269,-58.7180479"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-med-dark text-white text-[10px] font-bold px-3 py-2 rounded-lg flex items-center gap-1.5 hover:bg-med-light transition-colors"
-                    >
-                      <img src="https://www.google.com/s2/favicons?domain=maps.google.com&sz=32" alt="" className="w-3 h-3" />
-                      Google Maps
-                    </a>
-                    <a 
-                      href="https://waze.com/ul?ll=-34.5440269,-58.7180479&navigate=yes"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-sky-400 text-white text-[10px] font-bold px-3 py-2 rounded-lg flex items-center gap-1.5 hover:bg-sky-500 transition-colors"
-                    >
-                      <img src="https://www.google.com/s2/favicons?domain=waze.com&sz=32" alt="" className="w-3 h-3" />
-                      Waze
-                    </a>
+                  <div className="space-y-2">
+                    <p className="text-[10px] font-black uppercase tracking-widest text-text-dark/40 mb-2">Abrir en navegador:</p>
+                    <div className="grid grid-cols-2 gap-2">
+                      <a 
+                        href="https://www.google.com/maps/dir/?api=1&destination=-34.5440269,-58.7180479"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/btn bg-slate-50 hover:bg-med-dark hover:text-white border border-slate-200 p-3 rounded-xl flex flex-col items-center gap-1.5 transition-all active:scale-95 shadow-sm"
+                      >
+                        <img src="https://www.google.com/s2/favicons?domain=maps.google.com&sz=64" alt="" className="w-5 h-5 group-hover/btn:brightness-0 group-hover/btn:invert transition-all" />
+                        <span className="text-[10px] font-black uppercase tracking-tighter">Google Maps</span>
+                      </a>
+                      <a 
+                        href="https://waze.com/ul?ll=-34.5440269,-58.7180479&navigate=yes"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/btn bg-slate-50 hover:bg-sky-500 hover:text-white border border-slate-200 p-3 rounded-xl flex flex-col items-center gap-1.5 transition-all active:scale-95 shadow-sm"
+                      >
+                        <img src="https://www.google.com/s2/favicons?domain=waze.com&sz=64" alt="" className="w-5 h-5 group-hover/btn:brightness-0 group-hover/btn:invert transition-all" />
+                        <span className="text-[10px] font-black uppercase tracking-tighter">Waze App</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
