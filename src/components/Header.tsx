@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Activity, Menu, X, Phone } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
@@ -38,8 +38,15 @@ export default function Header() {
     { name: "Contacto", href: "/#contacto" },
   ];
 
-  const NavLink = ({ link, className }: { link: typeof navLinks[0], className?: string }) => {
+  interface NavLinkProps {
+    link: typeof navLinks[0];
+    className?: string;
+    children?: React.ReactNode;
+  }
+
+  const NavLink = ({ link, className, children }: NavLinkProps) => {
     const isSamePage = location.pathname === "/" && link.href.startsWith("/#");
+    const content = children || link.name;
 
     if (isSamePage) {
       return (
@@ -48,7 +55,7 @@ export default function Header() {
           className={className}
           onClick={() => setIsOpen(false)}
         >
-          {link.name}
+          {content}
         </a>
       );
     }
@@ -59,7 +66,7 @@ export default function Header() {
         className={className}
         onClick={() => setIsOpen(false)}
       >
-        {link.name}
+        {content}
       </Link>
     );
   };
@@ -104,11 +111,12 @@ export default function Header() {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
-              <NavLink
-                key={link.name}
-                link={link}
-                className="text-sm font-semibold transition-colors text-text-light hover:text-med-dark"
-              />
+              <div key={link.name}>
+                <NavLink
+                  link={link}
+                  className="text-sm font-semibold transition-colors text-text-light hover:text-med-dark"
+                />
+              </div>
             ))}
             <a
               href="tel:1130840282"
