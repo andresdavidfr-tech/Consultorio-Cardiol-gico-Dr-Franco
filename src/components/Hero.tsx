@@ -55,10 +55,14 @@ export default function Hero() {
             <div className="section-card flex-1 flex flex-col items-center justify-center text-center">
               <div className="w-32 h-32 rounded-full border-4 border-med-light overflow-hidden mb-4 shadow-inner bg-slate-100">
                 <img
-                  src="/regenerated_image_1777499698336.png"
+                  src="/doctor.png"
                   alt="Dr. Esteban Franco"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=400";
+                  }}
                 />
               </div>
               <h2 className="text-2xl font-black text-med-dark mb-1">Dr. Esteban Franco</h2>
