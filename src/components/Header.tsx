@@ -66,7 +66,7 @@ export default function Header() {
               </motion.div>
             </div>
             <div className="flex flex-col">
-              <span className="font-extrabold leading-[1.1] text-med-dark text-[14px] sm:text-[16px] tracking-tight uppercase">
+              <span className="font-display font-bold leading-[1.1] text-med-dark text-[15px] sm:text-[17px] tracking-tight uppercase">
                 Consultorio Cardiológico <br className="hidden sm:block" />
                 <span className="text-med-light">Dr. Franco</span>
               </span>
@@ -79,14 +79,14 @@ export default function Header() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-semibold transition-colors text-text-light hover:text-med-dark"
+                className="text-xs font-display font-bold uppercase tracking-wider transition-colors text-text-light hover:text-med-dark"
               >
                 {link.name}
               </a>
             ))}
             <a
               href="tel:1130840282"
-              className="bg-med-dark hover:bg-med-light text-white px-4 py-2 rounded-lg text-sm font-bold transition-all shadow-sm"
+              className="bg-med-dark hover:bg-med-light text-white px-4 py-2 rounded-lg text-sm font-display font-bold transition-all shadow-sm active:scale-95"
             >
               Turnos
             </a>
@@ -133,7 +133,7 @@ export default function Header() {
                     initial={{ x: -10, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.05 * idx }}
-                    className="text-xl font-bold text-med-dark py-4 px-2 hover:bg-slate-50 rounded-xl transition-colors flex items-center justify-between group"
+                    className="text-xl font-display font-bold text-med-dark py-4 px-2 hover:bg-slate-50 rounded-xl transition-colors flex items-center justify-between group"
                     onClick={() => setIsOpen(false)}
                   >
                     <span>{link.name}</span>
@@ -149,7 +149,7 @@ export default function Header() {
                 >
                   <a
                     href="tel:1130840282"
-                    className="bg-med-dark text-white text-center py-4 rounded-2xl font-black text-lg flex items-center justify-center gap-3 shadow-lg shadow-med-dark/20 active:scale-95 transition-transform"
+                    className="bg-med-dark text-white text-center py-4 rounded-2xl font-display font-bold text-lg flex items-center justify-center gap-3 shadow-lg shadow-med-dark/20 active:scale-95 transition-transform"
                     onClick={() => setIsOpen(false)}
                   >
                     <Phone size={24} />

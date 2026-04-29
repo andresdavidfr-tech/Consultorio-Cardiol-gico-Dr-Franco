@@ -10,7 +10,7 @@ export default function Contact() {
           <div className="grid lg:grid-cols-[1fr_450px] gap-12">
             <div>
               <span className="text-med-red font-bold tracking-widest uppercase text-[10px] mb-2 block">Información de Contacto</span>
-              <h2 className="text-3xl font-black text-med-dark mb-8 leading-tight">
+              <h2 className="text-3xl font-display font-bold text-med-dark mb-8 leading-tight">
                 Turnos y Consultas
               </h2>
 
@@ -34,7 +34,7 @@ export default function Contact() {
                     <MapPin size={18} />
                   </motion.div>
                   <div>
-                    <h5 className="font-extrabold text-xs text-med-dark uppercase group-hover:text-med-light transition-colors">Dirección</h5>
+                    <h5 className="font-display font-bold text-[11px] text-med-dark uppercase group-hover:text-med-light transition-colors tracking-wider">Dirección</h5>
                     <p className="text-sm text-text-light">Delia 1367, San Miguel, Buenos Aires</p>
                   </div>
                 </div>
@@ -44,7 +44,7 @@ export default function Contact() {
                     <Phone size={18} />
                   </div>
                   <div>
-                    <h5 className="font-extrabold text-xs text-med-dark uppercase">Central de Turnos</h5>
+                    <h5 className="font-display font-bold text-[11px] text-med-dark uppercase tracking-wider">Central de Turnos</h5>
                     <p className="text-sm text-text-light">11-3084-0282</p>
                   </div>
                 </div>
@@ -54,7 +54,7 @@ export default function Contact() {
                     <Mail size={18} />
                   </div>
                   <div>
-                    <h5 className="font-extrabold text-xs text-med-dark uppercase">Email</h5>
+                    <h5 className="font-display font-bold text-[11px] text-med-dark uppercase tracking-wider">Email</h5>
                     <p className="text-sm text-text-light">consultoriocardiologiafr@gmail.com</p>
                   </div>
                 </div>
@@ -63,7 +63,7 @@ export default function Contact() {
                   href="https://wa.me/5491130840282" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="bg-emerald-500 text-white w-full py-4 rounded-xl font-extrabold flex items-center justify-center gap-2 hover:bg-emerald-600 transition-colors shadow-lg active:scale-95 transition-transform"
+                  className="bg-emerald-500 text-white w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-emerald-600 transition-colors shadow-lg active:scale-95 transition-transform"
                 >
                   <MessageCircle size={20} />
                   Solicitar Turno WhatsApp
@@ -74,17 +74,17 @@ export default function Contact() {
             <div className="relative">
               <div className="absolute inset-0 bg-med-dark rounded-3xl -rotate-1 opacity-[0.03]" />
               <div className="relative h-full bg-white rounded-3xl p-8 border border-border-subtle shadow-xl flex flex-col justify-center text-center">
-                 <div className="bg-med-dark/5 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 text-med-dark">
+                 <div className="bg-med-dark/5 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 text-med-dark border border-med-dark/10">
                     <ClipboardList size={32} />
                  </div>
-                 <h3 className="text-xl font-black text-med-dark mb-3">Consulta Médica Digital</h3>
+                 <h3 className="text-xl font-display font-bold text-med-dark mb-3">Consulta Médica Digital</h3>
                  <p className="text-text-light text-sm mb-8 leading-relaxed">
                    Si prefiere enviarnos sus datos médicos y síntomas para una evaluación previa, puede completar nuestro formulario especializado.
                  </p>
                  
                  <Link
                    to="/consulta-especial"
-                   className="group bg-med-dark hover:bg-med-light text-white font-black py-4 px-6 rounded-2xl shadow-xl shadow-med-dark/20 flex items-center justify-center gap-3 transition-all active:scale-95 text-base"
+                   className="group bg-med-dark hover:bg-med-light text-white font-bold py-4 px-6 rounded-2xl shadow-xl shadow-med-dark/20 flex items-center justify-center gap-3 transition-all active:scale-95 text-base"
                  >
                    <span>Ir al Formulario Detallado</span>
                    <FileText size={20} className="group-hover:rotate-12 transition-transform" />
@@ -134,7 +134,7 @@ export default function Contact() {
                 </div>
                 
                 <div className="flex-1">
-                  <h4 className="font-black text-med-dark text-lg leading-tight mb-1">Consultorio San Miguel</h4>
+                  <h4 className="font-display font-bold text-med-dark text-lg leading-tight mb-1">Consultorio San Miguel</h4>
                   <p className="text-xs text-text-light mb-4 font-medium leading-relaxed">
                     Delia 1367, San Miguel.<br/>
                     Centro Médico Profesional.

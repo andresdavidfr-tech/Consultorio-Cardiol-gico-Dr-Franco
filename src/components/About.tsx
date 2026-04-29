@@ -27,7 +27,7 @@ export default function About() {
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             <div className="lg:w-1/2">
               <span className="text-med-light font-bold tracking-widest uppercase text-[10px] mb-2 block">Formación Profesional</span>
-              <h2 className="text-3xl font-black text-med-dark mb-6 leading-tight">
+              <h2 className="text-3xl font-display font-bold text-med-dark mb-6 leading-tight">
                 Dr. Esteban Franco
               </h2>
               
@@ -42,7 +42,7 @@ export default function About() {
                       {item.icon}
                     </div>
                     <div>
-                      <h4 className="font-extrabold text-med-dark text-xs uppercase tracking-wider mb-1">{item.title}</h4>
+                      <h4 className="font-display font-bold text-med-dark text-[11px] uppercase tracking-wider mb-1">{item.title}</h4>
                       <p className="text-text-light text-xs leading-relaxed">{item.description}</p>
                     </div>
                   </div>
@@ -64,7 +64,7 @@ export default function About() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-med-dark/40 via-transparent to-transparent opacity-60 pointer-events-none" />
                 <div className="absolute bottom-6 left-6 right-6 text-white text-shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <p className="text-sm font-bold italic">“La salud de su familia es nuestra prioridad.”</p>
+                  <p className="text-sm font-serif italic">“La salud de su familia es nuestra prioridad.”</p>
                 </div>
               </motion.div>
             </div>
