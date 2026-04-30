@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Activity, Menu, X, Phone } from "lucide-react";
+import { Activity, Menu, X, Phone, Instagram } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 export default function Header() {
@@ -76,7 +76,7 @@ export default function Header() {
       <nav
         id="main-nav"
         className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-300 h-[70px] flex items-center ${
-          scrolled ? "glass shadow-sm" : "bg-white border-b border-border-subtle"
+          scrolled ? "glass shadow-sm" : "bg-bg-main/80 border-b border-border-subtle backdrop-blur-sm"
         }`}
       >
         <div className="container mx-auto px-4 lg:px-10 flex justify-between items-center w-full">
@@ -93,7 +93,7 @@ export default function Header() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="relative flex items-center justify-center bg-white border border-med-dark/20 p-2 rounded-xl shadow-sm z-10"
+                className="relative flex items-center justify-center bg-bg-main border border-med-dark/20 p-2 rounded-xl shadow-sm z-10"
               >
                 <Activity className="w-5 h-5 text-med-dark" strokeWidth={3} />
                 {/* Subtle Red Detail: A heart beat indicator */}
@@ -109,7 +109,7 @@ export default function Header() {
           </NavLink>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-4">
             {navLinks.map((link) => (
               <div key={link.name}>
                 <NavLink
@@ -118,12 +118,23 @@ export default function Header() {
                 />
               </div>
             ))}
-            <a
-              href="tel:1130840282"
-              className="bg-med-dark hover:bg-med-light text-white px-4 py-2 rounded-lg text-sm font-bold transition-all shadow-sm"
-            >
-              Turnos
-            </a>
+            <div className="flex items-center gap-3 ml-2">
+              <a
+                href="https://www.instagram.com/cardiologiasanmiguel/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-med-dark hover:text-med-light transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram size={18} strokeWidth={2.5} />
+              </a>
+              <a
+                href="tel:1130840282"
+                className="bg-med-dark hover:bg-med-light text-white px-4 py-2 rounded-lg text-sm font-bold transition-all shadow-sm"
+              >
+                Turnos
+              </a>
+            </div>
           </div>
 
 
@@ -157,7 +168,7 @@ export default function Header() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="fixed top-[70px] left-0 right-0 z-[55] md:hidden bg-white shadow-2xl border-t border-slate-100 rounded-b-3xl overflow-hidden"
+              className="fixed top-[70px] left-0 right-0 z-[55] md:hidden bg-bg-main shadow-2xl border-t border-slate-100 rounded-b-3xl overflow-hidden"
             >
               <div className="flex flex-col p-8 gap-1">
                 {navLinks.map((link, idx) => (
@@ -174,21 +185,26 @@ export default function Header() {
                   </motion.div>
                 ))}
                 
-                <motion.div 
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
-                  className="mt-6 pt-6 border-t border-slate-100"
-                >
-                  <a
-                    href="tel:1130840282"
-                    className="bg-med-dark text-white text-center py-4 rounded-2xl font-black text-lg flex items-center justify-center gap-3 shadow-lg shadow-med-dark/20 active:scale-95 transition-transform"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <Phone size={24} />
-                    <span>Solicitar Turno Ahora</span>
-                  </a>
-                </motion.div>
+                  <div className="flex items-center justify-between mt-6 pt-6 border-t border-slate-100">
+                    <a
+                      href="https://www.instagram.com/cardiologiasanmiguel/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-2 text-med-dark font-bold hover:text-med-light transition-colors"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <Instagram size={20} />
+                      <span>Instagram</span>
+                    </a>
+                    <a
+                      href="tel:1130840282"
+                      className="bg-med-dark text-white px-6 py-3 rounded-2xl font-black text-base flex items-center justify-center gap-3 shadow-lg shadow-med-dark/20 active:scale-95 transition-transform"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <Phone size={20} />
+                      <span>Turnos</span>
+                    </a>
+                  </div>
               </div>
             </motion.div>
           </>

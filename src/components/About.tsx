@@ -24,7 +24,7 @@ export default function About() {
   return (
     <section id="doctor" className="py-12 bg-bg-main">
       <div className="container mx-auto px-4 lg:px-10">
-        <div className="section-card">
+        <div className="section-card" style={{ height: "936.125px" }}>
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             <div className="lg:w-1/2">
               <span className="text-med-light font-bold tracking-widest uppercase text-[10px] mb-2 block">Formación Profesional</span>
@@ -38,7 +38,7 @@ export default function About() {
 
               <div className="grid gap-4">
                 {credentials.map((item, idx) => (
-                  <div key={idx} className="flex gap-4 p-4 rounded-xl border border-border-subtle bg-slate-50/50">
+                  <div key={idx} className="flex gap-4 p-4 rounded-xl border border-border-subtle bg-white/40">
                     <div className="bg-med-dark/10 p-2.5 rounded-lg text-med-dark shrink-0 h-fit">
                       {item.icon}
                     </div>
@@ -51,22 +51,24 @@ export default function About() {
               </div>
             </div>
 
-            <div className="lg:w-1/2 w-full">
+            <div className="lg:w-1/2 w-full flex justify-center">
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="rounded-2xl overflow-hidden shadow-xl border border-border-subtle aspect-video lg:aspect-square relative group"
+                className="rounded-2xl overflow-hidden shadow-xl border border-border-subtle relative group"
+                style={{ width: "300px", height: "410px" }}
               >
                 <OptimizedImage
-                  src="/family.png"
-                  alt="Familia alegre frente a su hogar"
+                  src="/regenerated_image_1777514887017.png"
+                  alt="Dr. Esteban Franco"
                   className="w-full h-full"
-                  fallbackSrc="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=1200"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-med-dark/40 via-transparent to-transparent opacity-60 pointer-events-none" />
                 <div className="absolute bottom-6 left-6 right-6 text-white text-shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <p className="text-sm font-bold italic">“La salud de su familia es nuestra prioridad.”</p>
+                  <p className="text-sm font-bold italic flex items-center justify-center text-center">
+                    “La salud de su familia es nuestra prioridad.”
+                  </p>
                 </div>
               </motion.div>
             </div>

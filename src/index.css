@@ -8,7 +8,7 @@
   --color-med-light: #00A0DF;
   --color-med-accent: #10B981;
   --color-med-red: #ef4444;
-  --color-bg-main: #f8fafc;
+  --color-bg-main: #F4F4F5;
   --color-text-dark: #1e293b;
   --color-text-light: #64748b;
   --color-border-subtle: #e2e8f0;
@@ -26,16 +26,16 @@
 
 @layer components {
   .section-card {
-    @apply bg-white border border-border-subtle rounded-2xl shadow-sm p-6 md:p-8;
+    @apply bg-white/70 backdrop-blur-sm border border-border-subtle rounded-2xl shadow-sm p-6 md:p-8;
   }
   
   .compact-item {
-    @apply bg-white border border-border-subtle rounded-xl p-4 flex items-center gap-4 transition-all hover:shadow-md hover:border-med-light/30;
+    @apply bg-white/60 backdrop-blur-sm border border-border-subtle rounded-xl p-4 flex items-center gap-4 transition-all hover:shadow-md hover:border-med-light/30;
   }
 }
 
 @layer utilities {
   .glass {
-    @apply bg-white/95 backdrop-blur-sm border-b border-border-subtle;
+    @apply bg-bg-main/95 backdrop-blur-sm border-b border-border-subtle;
   }
 }

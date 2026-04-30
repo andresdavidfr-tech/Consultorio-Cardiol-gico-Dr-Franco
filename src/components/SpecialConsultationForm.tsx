@@ -62,7 +62,7 @@ export default function SpecialConsultationForm() {
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="bg-white p-10 rounded-3xl shadow-2xl border border-med-accent/20 text-center max-w-md w-full"
+          className="bg-bg-main p-10 rounded-3xl shadow-2xl border border-med-accent/20 text-center max-w-md w-full"
         >
           <div className="bg-emerald-100 text-emerald-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
             <CheckCircle2 size={40} />
@@ -90,7 +90,7 @@ export default function SpecialConsultationForm() {
           to="/" 
           className="inline-flex items-center gap-2 text-med-dark font-bold mb-8 hover:text-med-light transition-colors group"
         >
-          <div className="p-2 rounded-lg bg-white shadow-sm border border-border-subtle group-hover:border-med-light">
+          <div className="p-2 rounded-lg bg-bg-main shadow-sm border border-border-subtle group-hover:border-med-light">
             <ChevronLeft size={20} />
           </div>
           <span>Volver al Sitio Principal</span>
@@ -99,7 +99,7 @@ export default function SpecialConsultationForm() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-border-subtle"
+          className="bg-bg-main rounded-3xl shadow-2xl overflow-hidden border border-border-subtle"
         >
           {/* Form Header */}
           <div className="bg-med-dark p-8 text-white relative overflow-hidden">
@@ -133,7 +133,7 @@ export default function SpecialConsultationForm() {
                   required
                   value={formData.fullName}
                   onChange={(e) => setFormData({...formData, fullName: e.target.value})}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-med-dark focus:bg-white transition-all shadow-inner"
+                  className="w-full bg-white/50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-med-dark focus:bg-white transition-all shadow-inner"
                   placeholder="Ej: Juan Pérez"
                 />
               </div>
@@ -152,7 +152,7 @@ export default function SpecialConsultationForm() {
                     setFormData({...formData, age: e.target.value});
                     if (errors.age) setErrors(prev => ({ ...prev, age: undefined }));
                   }}
-                  className={`w-full bg-slate-50 border ${errors.age ? 'border-red-500' : 'border-slate-200'} rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-med-dark focus:bg-white transition-all shadow-inner`}
+                  className={`w-full bg-white/50 border ${errors.age ? 'border-red-500' : 'border-slate-200'} rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-med-dark focus:bg-white transition-all shadow-inner`}
                   placeholder="Su edad"
                 />
                 {errors.age && (
@@ -179,7 +179,7 @@ export default function SpecialConsultationForm() {
                   required
                   value={formData.healthInsurance}
                   onChange={(e) => setFormData({...formData, healthInsurance: e.target.value})}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-med-dark focus:bg-white transition-all shadow-inner"
+                  className="w-full bg-white/50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-med-dark focus:bg-white transition-all shadow-inner"
                   placeholder="Ej: OSDE, Swiss Medical..."
                 />
               </div>
@@ -196,7 +196,7 @@ export default function SpecialConsultationForm() {
                     setFormData({...formData, phone: e.target.value});
                     if (errors.phone) setErrors(prev => ({ ...prev, phone: undefined }));
                   }}
-                  className={`w-full bg-slate-50 border ${errors.phone ? 'border-red-500' : 'border-slate-200'} rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-med-dark focus:bg-white transition-all shadow-inner`}
+                  className={`w-full bg-white/50 border ${errors.phone ? 'border-red-500' : 'border-slate-200'} rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-med-dark focus:bg-white transition-all shadow-inner`}
                   placeholder="Su número de contacto"
                 />
                 {errors.phone && (
@@ -221,7 +221,7 @@ export default function SpecialConsultationForm() {
                 rows={4}
                 value={formData.symptoms}
                 onChange={(e) => setFormData({...formData, symptoms: e.target.value})}
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-med-dark focus:bg-white transition-all resize-none shadow-inner"
+                className="w-full bg-white/50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-med-dark focus:bg-white transition-all resize-none shadow-inner"
                 placeholder="Describa brevemente cómo se siente o qué estudios requiere..."
               ></textarea>
             </div>

@@ -1,12 +1,12 @@
 import { motion } from "motion/react";
-import { Mail, Phone, MapPin, MessageCircle, FileText, ClipboardList, ShieldAlert } from "lucide-react";
+import { Mail, Phone, MapPin, MessageCircle, FileText, ClipboardList, ShieldAlert, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function Contact() {
   return (
-    <section id="contacto" className="py-12 bg-white pb-24">
+    <section id="contacto" className="py-12 bg-bg-main pb-24">
       <div className="container mx-auto px-4 lg:px-10">
-        <div className="section-card bg-slate-50/30 backdrop-blur-sm border-slate-200">
+        <div className="section-card bg-white/60 backdrop-blur-sm border-border-subtle">
           <div className="grid lg:grid-cols-[1fr_450px] gap-12">
             <div>
               <span className="text-med-red font-bold tracking-widest uppercase text-[10px] mb-2 block">Información de Contacto</span>
@@ -29,7 +29,7 @@ export default function Contact() {
                       color: "var(--color-med-light)",
                       scale: 1.2
                     }}
-                    className="bg-slate-50 p-2.5 rounded-lg text-med-dark border border-border-subtle transition-colors"
+                    className="bg-bg-main p-2.5 rounded-lg text-med-dark border border-border-subtle transition-colors"
                   >
                     <MapPin size={18} />
                   </motion.div>
@@ -40,7 +40,7 @@ export default function Contact() {
                 </div>
 
                 <div className="flex gap-4 items-center">
-                  <div className="bg-slate-50 p-2.5 rounded-lg text-med-dark border border-border-subtle">
+                  <div className="bg-bg-main p-2.5 rounded-lg text-med-dark border border-border-subtle">
                     <Phone size={18} />
                   </div>
                   <div>
@@ -50,13 +50,30 @@ export default function Contact() {
                 </div>
 
                 <div className="flex gap-4 items-center">
-                  <div className="bg-slate-50 p-2.5 rounded-lg text-med-dark border border-border-subtle">
+                  <div className="bg-bg-main p-2.5 rounded-lg text-med-dark border border-border-subtle">
                     <Mail size={18} />
                   </div>
                   <div>
                     <h5 className="font-extrabold text-xs text-med-dark uppercase">Email</h5>
                     <p className="text-sm text-text-light">consultoriocardiologiafr@gmail.com</p>
                   </div>
+                </div>
+
+                <div className="flex gap-4 items-center group cursor-pointer">
+                  <a 
+                    href="https://www.instagram.com/cardiologiasanmiguel/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex gap-4 items-center w-full"
+                  >
+                    <div className="bg-bg-main p-2.5 rounded-lg text-med-dark border border-border-subtle group-hover:text-[#E1306C] group-hover:border-[#E1306C]/30 transition-colors">
+                      <Instagram size={18} />
+                    </div>
+                    <div>
+                      <h5 className="font-extrabold text-xs text-med-dark uppercase group-hover:text-[#E1306C] transition-colors">Instagram</h5>
+                      <p className="text-sm text-text-light">@cardiologiasanmiguel</p>
+                    </div>
+                  </a>
                 </div>
 
                 <a 
@@ -73,7 +90,7 @@ export default function Contact() {
 
             <div className="relative">
               <div className="absolute inset-0 bg-med-dark rounded-3xl -rotate-1 opacity-[0.03]" />
-              <div className="relative h-full bg-white rounded-3xl p-8 border border-border-subtle shadow-xl flex flex-col justify-center text-center">
+              <div className="relative h-full bg-white/40 backdrop-blur-sm rounded-3xl p-8 border border-border-subtle shadow-xl flex flex-col justify-center text-center">
                  <div className="bg-med-dark/5 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 text-med-dark">
                     <ClipboardList size={32} />
                  </div>
@@ -100,7 +117,7 @@ export default function Contact() {
         </div>
 
         {/* Map Section with Navigation Options */}
-        <div id="ubicacion" className="mt-8 rounded-3xl overflow-hidden border border-border-subtle shadow-lg relative bg-slate-50">
+        <div id="ubicacion" className="mt-8 rounded-3xl overflow-hidden border border-border-subtle shadow-lg relative bg-bg-main">
           <div className="h-[400px] w-full">
             <iframe
               title="Mapa Consultorio Dr. Esteban Franco"
@@ -119,7 +136,7 @@ export default function Contact() {
               initial={{ x: -20, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
-              className="bg-white/95 backdrop-blur-md p-5 rounded-3xl border border-border-subtle shadow-2xl max-w-sm"
+              className="bg-bg-main/95 backdrop-blur-md p-5 rounded-3xl border border-border-subtle shadow-2xl max-w-sm"
             >
               <div className="flex items-start gap-4">
                 <div className="relative">
@@ -147,7 +164,7 @@ export default function Contact() {
                         href="https://www.google.com/maps/dir/?api=1&destination=-34.5440269,-58.7180479"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group/btn bg-slate-50 hover:bg-med-dark hover:text-white border border-slate-200 p-3 rounded-xl flex flex-col items-center gap-1.5 transition-all active:scale-95 shadow-sm"
+                        className="group/btn bg-bg-main hover:bg-med-dark hover:text-white border border-slate-200 p-3 rounded-xl flex flex-col items-center gap-1.5 transition-all active:scale-95 shadow-sm"
                       >
                         <img src="https://www.google.com/s2/favicons?domain=maps.google.com&sz=64" alt="" className="w-5 h-5 group-hover/btn:brightness-0 group-hover/btn:invert transition-all" />
                         <span className="text-[10px] font-black uppercase tracking-tighter">Google Maps</span>
@@ -156,7 +173,7 @@ export default function Contact() {
                         href="https://waze.com/ul?ll=-34.5440269,-58.7180479&navigate=yes"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group/btn bg-slate-50 hover:bg-sky-500 hover:text-white border border-slate-200 p-3 rounded-xl flex flex-col items-center gap-1.5 transition-all active:scale-95 shadow-sm"
+                        className="group/btn bg-bg-main hover:bg-sky-500 hover:text-white border border-slate-200 p-3 rounded-xl flex flex-col items-center gap-1.5 transition-all active:scale-95 shadow-sm"
                       >
                         <img src="https://www.google.com/s2/favicons?domain=waze.com&sz=64" alt="" className="w-5 h-5 group-hover/btn:brightness-0 group-hover/btn:invert transition-all" />
                         <span className="text-[10px] font-black uppercase tracking-tighter">Waze App</span>

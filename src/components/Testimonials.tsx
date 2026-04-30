@@ -35,7 +35,7 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="py-12 bg-white overflow-hidden border-b border-border-subtle">
+    <section className="py-12 bg-bg-main overflow-hidden border-b border-border-subtle">
       <div className="container mx-auto px-4 lg:px-10">
         <div className="text-center mb-10">
           <span className="text-med-red font-bold tracking-widest uppercase text-[10px] mb-2 block">Experiencias</span>
@@ -46,13 +46,13 @@ export default function Testimonials() {
           <div className="flex items-center justify-between gap-4">
             <button 
               onClick={prev}
-              className="hidden md:flex p-3 rounded-full border border-border-subtle hover:bg-slate-50 transition-colors text-med-dark shrink-0"
+              className="hidden md:flex p-3 rounded-full border border-border-subtle hover:bg-white transition-colors text-med-dark shrink-0"
               aria-label="Anterior"
             >
               <ChevronLeft size={24} />
             </button>
 
-            <div className="flex-1 min-h-[200px] flex flex-col items-center justify-center text-center px-4 md:px-12 py-8 bg-slate-50/50 rounded-3xl border border-border-subtle relative">
+            <div className="flex-1 min-h-[200px] flex flex-col items-center justify-center text-center px-4 md:px-12 py-8 bg-white/40 backdrop-blur-sm rounded-3xl border border-border-subtle relative">
               <div className="absolute top-6 left-6 text-med-dark/10">
                 <Quote size={48} fill="currentColor" />
               </div>
@@ -84,7 +84,7 @@ export default function Testimonials() {
 
             <button 
               onClick={next}
-              className="hidden md:flex p-3 rounded-full border border-border-subtle hover:bg-slate-50 transition-colors text-med-dark shrink-0"
+              className="hidden md:flex p-3 rounded-full border border-border-subtle hover:bg-white transition-colors text-med-dark shrink-0"
               aria-label="Siguiente"
             >
               <ChevronRight size={24} />

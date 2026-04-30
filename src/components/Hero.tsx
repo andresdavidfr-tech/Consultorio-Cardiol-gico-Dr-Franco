@@ -4,7 +4,7 @@ import OptimizedImage from "./ui/OptimizedImage";
 
 export default function Hero() {
   return (
-    <section id="inicio" className="relative pt-[110px] pb-12 overflow-hidden bg-white">
+    <section id="inicio" className="relative pt-[110px] pb-12 overflow-hidden bg-bg-main">
       <div className="container mx-auto px-4 lg:px-10 relative z-10">
         <div className="grid lg:grid-cols-[1fr_400px] gap-8 items-stretch">
           <div className="section-card flex flex-col justify-center border-med-dark/10 shadow-xl shadow-med-dark/5">
@@ -21,10 +21,9 @@ export default function Hero() {
             <div className="lg:hidden flex flex-col items-center mb-6 pt-4 border-t border-border-subtle">
                <div className="w-24 h-24 rounded-full border-2 border-med-light overflow-hidden mb-2 shadow-inner bg-slate-100">
                   <OptimizedImage
-                    src="/doctor.png"
+                    src="/regenerated_image_1777513986675.png"
                     alt="Dr. Esteban Franco"
                     className="w-full h-full"
-                    fallbackSrc="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=400&h=400"
                   />
                </div>
                <span className="text-xs font-black text-med-dark">Dr. Esteban Franco</span>
@@ -46,7 +45,7 @@ export default function Hero() {
               </a>
               <a
                 href="#servicios"
-                className="bg-white hover:bg-slate-50 text-text-dark border border-border-subtle px-6 py-3 rounded-lg font-bold text-base transition-all shadow-sm"
+                className="bg-bg-main hover:bg-white text-text-dark border border-border-subtle px-6 py-3 rounded-lg font-bold text-base transition-all shadow-sm"
               >
                 Ver Servicios
               </a>
@@ -69,10 +68,9 @@ export default function Hero() {
             <div className="section-card flex-1 flex flex-col items-center justify-center text-center">
               <div className="w-32 h-32 rounded-full border-4 border-med-light overflow-hidden mb-4 shadow-inner bg-slate-100">
                 <OptimizedImage
-                  src="/doctor.png"
+                  src="/regenerated_image_1777513986675.png"
                   alt="Dr. Esteban Franco"
                   className="w-full h-full"
-                  fallbackSrc="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=600&h=600"
                 />
               </div>
               <h2 className="text-2xl font-black text-med-dark mb-1">Dr. Esteban Franco</h2>

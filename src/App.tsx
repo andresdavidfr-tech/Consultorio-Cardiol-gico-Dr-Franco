@@ -40,7 +40,7 @@ function HomePage() {
 
 export default function App() {
   return (
-    <div className="min-h-screen font-sans selection:bg-med-light/20 selection:text-med-dark">
+    <div className="min-h-screen font-sans selection:bg-med-light/20 selection:text-med-dark bg-bg-main">
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />

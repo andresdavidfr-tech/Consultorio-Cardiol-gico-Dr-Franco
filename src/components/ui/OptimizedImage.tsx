@@ -13,11 +13,14 @@ export default function OptimizedImage({
   src, 
   alt, 
   className = "", 
-  fallbackSrc = "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800",
+  fallbackSrc,
   loading = "lazy"
 }: OptimizedImageProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState(false);
+
+  // If there's an error and no fallback, we might want to show a generic placeholder
+  const finalSrc = error && fallbackSrc ? fallbackSrc : src;
 
   return (
     <div className={`relative overflow-hidden ${className}`}>
@@ -31,10 +34,21 @@ export default function OptimizedImage({
             <div className="w-8 h-8 border-2 border-med-light/30 border-t-med-light rounded-full animate-spin" />
           </motion.div>
         )}
+        {error && !fallbackSrc && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="absolute inset-0 bg-slate-50 flex items-center justify-center text-slate-300"
+          >
+            <div className="flex flex-col items-center gap-1">
+              <span className="text-[10px] font-bold uppercase tracking-widest text-slate-300 px-2 text-center">{alt}</span>
+            </div>
+          </motion.div>
+        )}
       </AnimatePresence>
 
       <motion.img
-        src={error ? fallbackSrc : src}
+        src={finalSrc}
         alt={alt}
         loading={loading}
         onLoad={() => setIsLoaded(true)}

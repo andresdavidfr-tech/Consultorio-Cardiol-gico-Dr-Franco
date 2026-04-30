@@ -68,7 +68,7 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="py-12 bg-slate-50 border-b border-border-subtle">
+    <section className="py-12 bg-bg-main border-b border-border-subtle">
       <div className="container mx-auto px-4 lg:px-10">
         <div className="max-w-3xl mx-auto">
           <div className="flex items-center gap-2 mb-2 justify-center md:justify-start">
@@ -77,7 +77,7 @@ export default function FAQ() {
           </div>
           <h2 className="text-3xl font-black text-med-dark mb-8 text-center md:text-left">Dudas comunes</h2>
           
-          <div className="bg-white rounded-3xl p-2 md:p-6 border border-border-subtle shadow-sm px-6">
+          <div className="bg-white/40 backdrop-blur-sm rounded-3xl p-2 md:p-6 border border-border-subtle shadow-sm px-6">
             {faqs.map((faq, index) => (
               <FAQItem 
                 key={index} 
