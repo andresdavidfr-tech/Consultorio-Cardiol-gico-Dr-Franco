@@ -24,7 +24,7 @@ export default function About() {
   return (
     <section id="doctor" className="py-12 bg-bg-main">
       <div className="container mx-auto px-4 lg:px-10">
-        <div className="section-card" style={{ height: "936.125px" }}>
+        <div className="section-card">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             <div className="lg:w-1/2">
               <span className="text-med-light font-bold tracking-widest uppercase text-[10px] mb-2 block">Formación Profesional</span>
@@ -32,8 +32,8 @@ export default function About() {
                 Dr. Esteban Franco
               </h2>
               
-              <p className="text-sm text-text-light mb-8 leading-relaxed">
-                Formado en la Universidad de Buenos Aires y miembro de la Sociedad Argentina de Cardiología. Con amplia experiencia en prevención, diagnóstico y tratamiento de afecciones cardiovasculares, brindando atención de excelencia en San Miguel.
+              <p className="text-sm text-text-light mb-8 leading-relaxed text-justify">
+                Formado en la Universidad de Buenos Aires and miembro de la Sociedad Argentina de Cardiología. Con amplia experiencia en prevención, diagnóstico y tratamiento de afecciones cardiovasculares, brindando atención de excelencia en San Miguel.
               </p>
 
               <div className="grid gap-4">
@@ -52,25 +52,31 @@ export default function About() {
             </div>
 
             <div className="lg:w-1/2 w-full flex justify-center">
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                className="rounded-2xl overflow-hidden shadow-xl border border-border-subtle relative group"
-                style={{ width: "300px", height: "410px" }}
-              >
-                <OptimizedImage
-                  src="/regenerated_image_1777514887017.png"
-                  alt="Dr. Esteban Franco"
-                  className="w-full h-full"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-med-dark/40 via-transparent to-transparent opacity-60 pointer-events-none" />
-                <div className="absolute bottom-6 left-6 right-6 text-white text-shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <p className="text-sm font-bold italic flex items-center justify-center text-center">
-                    “La salud de su familia es nuestra prioridad.”
-                  </p>
-                </div>
-              </motion.div>
+              <div className="relative">
+                {/* Decorative background element that aligns with the image */}
+                <div className="absolute -inset-4 bg-med-dark/5 rounded-3xl -rotate-2" />
+                <div className="absolute inset-0 bg-med-light/10 rounded-2xl rotate-2" />
+                
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  className="rounded-2xl overflow-hidden shadow-xl border border-border-subtle relative group bg-white z-10"
+                  style={{ width: "300px", height: "410px" }}
+                >
+                  <OptimizedImage
+                    src="/regenerated_image_1777514887017.png"
+                    alt="Dr. Esteban Franco"
+                    className="w-full h-full"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-med-dark/40 via-transparent to-transparent opacity-60 pointer-events-none" />
+                  <div className="absolute bottom-6 left-6 right-6 text-white text-shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <p className="text-sm font-bold italic flex items-center justify-center text-center">
+                      “La salud de su familia es nuestra prioridad.”
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>

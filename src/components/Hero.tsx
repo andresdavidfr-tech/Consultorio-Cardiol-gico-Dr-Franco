@@ -4,10 +4,10 @@ import OptimizedImage from "./ui/OptimizedImage";
 
 export default function Hero() {
   return (
-    <section id="inicio" className="relative pt-[110px] pb-12 overflow-hidden bg-bg-main">
+    <section id="inicio" className="relative pt-[110px] pb-12 overflow-hidden bg-[#2b3366]">
       <div className="container mx-auto px-4 lg:px-10 relative z-10">
         <div className="grid lg:grid-cols-[1fr_400px] gap-8 items-stretch">
-          <div className="section-card flex flex-col justify-center border-med-dark/10 shadow-xl shadow-med-dark/5">
+          <div className="section-card flex flex-col justify-center border-med-dark/10 shadow-xl shadow-med-dark/5 !bg-[#eae9e9]">
             <span className="inline-block px-3 py-1 bg-med-dark/5 text-med-dark rounded text-[11px] font-bold uppercase tracking-wider mb-4 w-fit border border-med-dark/10 flex items-center gap-2">
               <span className="w-1.5 h-1.5 bg-med-red rounded-full animate-pulse shadow-[0_0_5px_rgba(239,68,68,0.5)]" />
               Especialista UBA - SAC
@@ -30,7 +30,7 @@ export default function Hero() {
                <span className="text-[10px] font-bold text-med-light uppercase tracking-widest">Cardiólogo UBA - SAC</span>
             </div>
 
-            <p className="text-base text-text-light mb-8 max-w-2xl leading-relaxed">
+            <p className="text-base text-text-light mb-8 max-w-2xl leading-relaxed text-justify">
               Atención cardiológica integral en San Miguel. Compromiso con la salud cardiovascular de nuestros pacientes a través de la prevención y tecnología médica.
             </p>
             
@@ -65,7 +65,7 @@ export default function Hero() {
           </div>
 
           <div className="hidden lg:flex flex-col gap-4">
-            <div className="section-card flex-1 flex flex-col items-center justify-center text-center">
+            <div className="section-card flex-1 flex flex-col items-center justify-center text-center !bg-[#eae9e9]">
               <div className="w-32 h-32 rounded-full border-4 border-med-light overflow-hidden mb-4 shadow-inner bg-slate-100">
                 <OptimizedImage
                   src="/regenerated_image_1777513986675.png"

@@ -76,7 +76,7 @@ export default function Header() {
       <nav
         id="main-nav"
         className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-300 h-[70px] flex items-center ${
-          scrolled ? "glass shadow-sm" : "bg-bg-main/80 border-b border-border-subtle backdrop-blur-sm"
+          scrolled ? "glass shadow-sm" : "bg-[#eaeaea] border-b border-border-subtle backdrop-blur-sm"
         }`}
       >
         <div className="container mx-auto px-4 lg:px-10 flex justify-between items-center w-full">

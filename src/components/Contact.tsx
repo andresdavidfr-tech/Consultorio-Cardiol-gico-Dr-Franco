@@ -39,25 +39,25 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="flex gap-4 items-center">
-                  <div className="bg-bg-main p-2.5 rounded-lg text-med-dark border border-border-subtle">
+                <a href="tel:1130840282" className="flex gap-4 items-center group cursor-pointer">
+                  <div className="bg-bg-main p-2.5 rounded-lg text-med-dark border border-border-subtle group-hover:bg-med-dark group-hover:text-white transition-colors">
                     <Phone size={18} />
                   </div>
                   <div>
-                    <h5 className="font-extrabold text-xs text-med-dark uppercase">Central de Turnos</h5>
+                    <h5 className="font-extrabold text-xs text-med-dark uppercase group-hover:text-med-dark transition-colors">Central de Turnos</h5>
                     <p className="text-sm text-text-light">11-3084-0282</p>
                   </div>
-                </div>
+                </a>
 
-                <div className="flex gap-4 items-center">
-                  <div className="bg-bg-main p-2.5 rounded-lg text-med-dark border border-border-subtle">
+                <a href="mailto:consultoriocardiologiafr@gmail.com" className="flex gap-4 items-center group cursor-pointer">
+                  <div className="bg-bg-main p-2.5 rounded-lg text-med-dark border border-border-subtle group-hover:bg-med-dark group-hover:text-white transition-colors">
                     <Mail size={18} />
                   </div>
                   <div>
-                    <h5 className="font-extrabold text-xs text-med-dark uppercase">Email</h5>
+                    <h5 className="font-extrabold text-xs text-med-dark uppercase group-hover:text-med-dark transition-colors">Email</h5>
                     <p className="text-sm text-text-light">consultoriocardiologiafr@gmail.com</p>
                   </div>
-                </div>
+                </a>
 
                 <div className="flex gap-4 items-center group cursor-pointer">
                   <a 
